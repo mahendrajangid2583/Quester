@@ -93,6 +93,9 @@ app.use("/api/proxy", proxyRoutes);
 // --- Error Handler (custom middleware) ---
 app.use(errorHandler);
 
+app.get("/", (req,res)=>{
+  res.send("Backend running");
+});
 // --- Start Server ---
 const PORT = process.env.PORT || 5000;
 const server = app.listen(PORT, () =>
